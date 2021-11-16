@@ -35,7 +35,7 @@ class Api::BooksController < ApplicationController
         @book = Book.find(params[:id])
         if @book
             # @book.update(book_params)
-            @book.update(B_title: params[:B_title], Author: params[:Author], Publisher: params[:Publisher], Year: params[:Year])
+            @book.update(B_id: params[:B_id], B_title: params[:B_title], Author: params[:Author], Publisher: params[:Publisher], Year: params[:Year])
             render json: {message: 'Book updated.', data: @book}, status: 200
         else
             render error: {error: 'Unable to update Book.'}, status: 400
